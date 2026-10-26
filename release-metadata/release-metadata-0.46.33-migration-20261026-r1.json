@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "product": "EmbodiedStudio",
+  "app_id": "78DB81B8-4578-4A6F-B825-3E7404D9A2F6",
+  "architecture": "x64",
+  "version": "0.46.33",
+  "windows_version": "0.46.33.0",
+  "build_id": "migration-20261026-r1",
+  "channel": "stable",
+  "formal_build": true,
+  "role": "historical_migration_and_recovery",
+  "installer": {
+    "name": "EmbodiedStudio-Setup-0.46.33-migration-20261026-r1-win-x64.exe",
+    "size": 155382816,
+    "sha256": "5950c9515b946451a9c5677a1f344ed90852bbd4bedf44a190738a7c43391f7b"
+  },
+  "runtime_source": {
+    "git_commit": "d40224fdcd9a35482434a0493a5c7b449c4a4a89",
+    "git_dirty": false,
+    "source_fingerprint_sha256": "8dc4caf5dc70bdd3c2e92d682149eaeb0d9468272bd7860d94b34959a63b62bb"
+  },
+  "native_launcher_sha256": "2214e782182ced977050fe1a6b1d8319f9b412e1ec4a9bc511a6a1c06339934f",
+  "runtime_signature": "ECDSA-P256-SHA256-P1363",
+  "project_key_id": "embodied-studio-catalog-20261020",
+  "authenticode_required": false,
+  "windows_signature_status": "NotSigned",
+  "theme_base": "historical 0.46.33",
+  "lineage": "Restored hashed historical 0.46.33 source; reviewed update-trust and packaging backports; distinct migration build",
+  "verification": {
+    "native_inventory_files": 2608,
+    "native_inventory": "passed",
+    "frozen_smoke": "passed",
+    "compatibility_constant_warning_count": 1
+  },
+  "record_created_at": "2026-10-26T10:13:48.720836+00:00",
+  "publication_status_is_reported_by_github_release_and_signed_catalog": true
+}

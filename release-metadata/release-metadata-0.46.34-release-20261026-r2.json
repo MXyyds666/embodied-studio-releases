@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "product": "EmbodiedStudio",
+  "app_id": "78DB81B8-4578-4A6F-B825-3E7404D9A2F6",
+  "architecture": "x64",
+  "version": "0.46.34",
+  "windows_version": "0.46.34.0",
+  "build_id": "release-20261026-r2",
+  "channel": "stable",
+  "formal_build": true,
+  "installer": {
+    "name": "EmbodiedStudio-Setup-0.46.34-release-20261026-r2-win-x64.exe",
+    "size": 155361022,
+    "sha256": "189a59948dd8dc139d3a3c6df3227183c74eb3d4fca626585662c306bf2ce71d"
+  },
+  "runtime_source": {
+    "git_commit": "4580d175f75c17dbb3868164e82e0554d33c8f57",
+    "git_dirty": false,
+    "source_fingerprint_sha256": "9917a29054c2b9475bacc95e132ca3ffc50b5f69ad06bf2b120e73656d5d8312"
+  },
+  "packaging_tool": {
+    "git_commit": "c3efd0d86f2d7723701c25a70826bf0c25899831",
+    "installer_timeout_seconds": 600
+  },
+  "native_launcher_sha256": "606f4ab736ee1c8eb699429c9f33616a6e6e78616a60f0ff44ddad6b0c144450",
+  "runtime_signature": "ECDSA-P256-SHA256-P1363",
+  "project_key_id": "embodied-studio-catalog-20261020",
+  "authenticode_required": false,
+  "windows_signature_status": "NotSigned",
+  "verification": {
+    "native_inventory_files": 2608,
+    "native_inventory": "passed",
+    "frozen_smoke": "passed",
+    "compatibility_constant_warning_count": 1
+  },
+  "record_created_at": "2026-10-26T09:30:27.970713+00:00",
+  "publication_status_is_reported_by_github_release_and_signed_catalog": true
+}
