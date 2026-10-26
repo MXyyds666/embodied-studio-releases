@@ -9,3 +9,5 @@
 ## 2026-10-26 项目签名交付
 
 0.46.34 及历史 0.46.33 迁移/回退构建的固定身份见 release-metadata/。Windows 签名状态为 NotSigned；项目目录签名、安装包摘要及原生完整性检查保持必需。
+
+签名目录：stable/catalog.json 与 stable/catalog.sig。目录序号 1，有效期至 2026-11-02T10:32:00+00:00。
