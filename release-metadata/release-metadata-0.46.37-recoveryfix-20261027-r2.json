@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "product": "EmbodiedStudio",
+  "version": "0.46.37",
+  "build_id": "recoveryfix-20261027-r2",
+  "windows_version": "0.46.37.0",
+  "runtime_directory": "app-0.46.37-recoveryfix-20261027-r2",
+  "channel": "stable",
+  "built_at": "2026-10-27T03:41:32.512651Z",
+  "source_commit": "649e53f9eddfd98575719d1e69eab7c4fb646875",
+  "source_fingerprint_sha256": "b346f04c1ee9b028725bd223d365c2294c50821c457af201c8cc38efca24ec74",
+  "installer": {
+    "file_name": "EmbodiedStudio-Setup-0.46.37-recoveryfix-20261027-r2-win-x64.exe",
+    "size": 155388697,
+    "sha256": "673e00d394733ab768fb13aa5751f9a90f2ed5fe45fce3d212be01d3a0e7cfdd",
+    "windows_signature": "NotSigned"
+  },
+  "launcher_sha256": "00bd576ab252ae3b3ce9346d148dea647a65a02a9b00784b3f611b355ea21128",
+  "project_signature": "ECDSA-P256 verified",
+  "native_inventory_files": 2608,
+  "data_schema": 1,
+  "verification_at_preparation": {
+    "full_suite": {
+      "passed": 3468,
+      "failed": 0,
+      "skipped": 2,
+      "missing": 0,
+      "collected": 3470,
+      "test_files": 210,
+      "coverage_complete": true,
+      "subtests_passed": 2259,
+      "physical_serial_open_attempts": 0,
+      "test_inputs_unchanged": true,
+      "input_count": 553
+    },
+    "real_windows_backend_pair": "passed",
+    "GUI_handoff": "not_exercised",
+    "desktop_control": false,
+    "public_online_upgrade": "not_performed_at_preparation",
+    "clean_machine_or_hardware_acceptance": "not_performed"
+  }
+}

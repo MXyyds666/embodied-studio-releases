@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "product": "EmbodiedStudio",
+  "version": "0.46.36",
+  "build_id": "migration-20261027-r1",
+  "windows_version": "0.46.36.0",
+  "runtime_directory": "app-0.46.36-migration-20261027-r1",
+  "channel": "stable",
+  "built_at": "2026-10-27T05:08:59.735333Z",
+  "source_commit": "7b037d59df6c143126d20f98ce1d65a44c7a66c2",
+  "source_fingerprint_sha256": "9acd5a07d57142bd2518f7bfb4f52bc8a3f6548206012e819a29e09429f55b90",
+  "installer": {
+    "file_name": "EmbodiedStudio-Setup-0.46.36-migration-20261027-r1-win-x64.exe",
+    "size": 155385480,
+    "sha256": "37bc22ee2c32f92c45b4780e35577a714aec8ead1d381dc4e204775ae224df64",
+    "windows_signature": "NotSigned"
+  },
+  "launcher_sha256": "72cd3c3561a9253dec80b6820b632cb22b96a39afa3f89ba85fa9b268bf09d3d",
+  "project_signature": "ECDSA-P256 verified",
+  "native_inventory_files": 2608,
+  "data_schema": 1,
+  "verification_at_preparation": {
+    "full_suite": {
+      "passed": 3468,
+      "failed": 0,
+      "skipped": 2,
+      "missing": 0,
+      "collected": 3470,
+      "test_files": 210,
+      "coverage_complete": true,
+      "subtests_passed": 2259,
+      "physical_serial_open_attempts": 0,
+      "test_inputs_unchanged": true,
+      "input_count": 553
+    },
+    "real_windows_backend_pair": "passed",
+    "GUI_handoff": "not_exercised",
+    "desktop_control": false,
+    "public_online_upgrade": "not_performed_at_preparation",
+    "clean_machine_or_hardware_acceptance": "not_performed"
+  }
+}
