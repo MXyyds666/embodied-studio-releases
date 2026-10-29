@@ -2,12 +2,13 @@ name: Temporary native schedule diagnostic
 
 'on':
   schedule:
-    - cron: '18,23 6 29 10 *'
+    - cron: '*/5 * * * *'
 
 permissions: {}
 
 jobs:
   observe:
+    if: github.run_number <= 4
     runs-on: windows-2022
     timeout-minutes: 2
     steps:
