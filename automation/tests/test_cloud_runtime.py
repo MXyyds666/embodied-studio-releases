@@ -30,6 +30,7 @@ class CloudBoundaryTests(unittest.TestCase):
 
     def test_repository_name_is_also_bound_to_its_numeric_identity(self):
         remote = renewal.GitHub("unused")
+        self.assertEqual(remote.endpoint(""), "repos/" + renewal.REPOSITORY)
         remote.api = lambda endpoint: {"id": 1}
         with patch.dict(os.environ, dict(GITHUB_ACTIONS="true", GITHUB_REPOSITORY=renewal.REPOSITORY,
                                         GITHUB_REF="refs/heads/main", GITHUB_EVENT_NAME="workflow_dispatch"), clear=True):

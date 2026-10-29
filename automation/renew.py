@@ -152,7 +152,7 @@ class GitHub:
         return json.loads(result.stdout)
 
     def endpoint(self, suffix):
-        return f"repos/{REPOSITORY}/{suffix}"
+        return f"repos/{REPOSITORY}/{suffix}".rstrip("/")
 
     def authorize(self):
         required = {"GITHUB_ACTIONS": "true", "GITHUB_REPOSITORY": REPOSITORY, "GITHUB_REF": "refs/heads/main"}
