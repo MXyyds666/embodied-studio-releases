@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "product": "standalone",
+  "version": "0.46.39",
+  "build_id": "cloud-20261029-standalone-r1",
+  "installer_sha256": "02883451393cf1517febe1ea7f1ed3c25e6e48ec1d783a9d0678d4f0a28a913d",
+  "installer_size": 155321551,
+  "source_commit": "4e3784ad1345b4882a3cd8dbe2bad8b1edcd670d",
+  "source_fingerprint_sha256": "fc50a734db64391336470dfc65f53450a7742f9e6d63149e31f542eedb0d3c03",
+  "frozen_input": "Prior controlled online-update snapshot plus cloud feed URL and approved dual public trust; parallel Bootloader/USB_TOOL work excluded",
+  "status": "passed",
+  "local_and_public_installer_transactions": {
+    "local": {
+      "status": "passed",
+      "completed_at": "2026-10-29T04:43:50.864143+00:00",
+      "evidence_sha256": "c096a4bfe3158536442fa2e9a51c472d86c4496ede8ad331ed73ca5153c1c75b",
+      "steps": [
+        {
+          "name": "baseline_install",
+          "status": "passed",
+          "coordinator_exit_code": null,
+          "outcome": null,
+          "active_version": "0.46.38",
+          "inventory_verified": true,
+          "actual_frozen_host_consumed_result": null
+        },
+        {
+          "name": "upgrade",
+          "status": "passed",
+          "coordinator_exit_code": 0,
+          "outcome": "succeeded",
+          "active_version": "0.46.39",
+          "inventory_verified": true,
+          "actual_frozen_host_consumed_result": true
+        },
+        {
+          "name": "rollback",
+          "status": "passed",
+          "coordinator_exit_code": 0,
+          "outcome": "succeeded",
+          "active_version": "0.46.38",
+          "inventory_verified": true,
+          "actual_frozen_host_consumed_result": true
+        },
+        {
+          "name": "failed_install_auto_recovery",
+          "status": "passed",
+          "coordinator_exit_code": 10,
+          "outcome": "rolled_back",
+          "active_version": "0.46.38",
+          "inventory_verified": true,
+          "actual_frozen_host_consumed_result": true
+        },
+        {
+          "name": "upgrade_after_recovery",
+          "status": "passed",
+          "coordinator_exit_code": 0,
+          "outcome": "succeeded",
+          "active_version": "0.46.39",
+          "inventory_verified": true,
+          "actual_frozen_host_consumed_result": true
+        }
+      ],
+      "registration_restored": true,
+      "user_data_preserved": true,
+      "control_directory_preserved": true
+    },
+    "public": {
+      "status": "passed",
+      "completed_at": "2026-10-29T04:57:43.463657+00:00",
+      "evidence_sha256": "a613e0bc8f1e1a515448ff22d50b7304ce138be75e082a70dbf2142ba73d9cbd",
+      "steps": [
+        {
+          "name": "baseline_install",
+          "status": "passed",
+          "coordinator_exit_code": null,
+          "outcome": null,
+          "active_version": "0.46.38",
+          "inventory_verified": true,
+          "actual_frozen_host_consumed_result": null
+        },
+        {
+          "name": "upgrade",
+          "status": "passed",
+          "coordinator_exit_code": 0,
+          "outcome": "succeeded",
+          "active_version": "0.46.39",
+          "inventory_verified": true,
+          "actual_frozen_host_consumed_result": true
+        },
+        {
+          "name": "rollback",
+          "status": "passed",
+          "coordinator_exit_code": 0,
+          "outcome": "succeeded",
+          "active_version": "0.46.38",
+          "inventory_verified": true,
+          "actual_frozen_host_consumed_result": true
+        },
+        {
+          "name": "failed_install_auto_recovery",
+          "status": "passed",
+          "coordinator_exit_code": 10,
+          "outcome": "rolled_back",
+          "active_version": "0.46.38",
+          "inventory_verified": true,
+          "actual_frozen_host_consumed_result": true
+        },
+        {
+          "name": "upgrade_after_recovery",
+          "status": "passed",
+          "coordinator_exit_code": 0,
+          "outcome": "succeeded",
+          "active_version": "0.46.39",
+          "inventory_verified": true,
+          "actual_frozen_host_consumed_result": true
+        }
+      ],
+      "registration_restored": true,
+      "user_data_preserved": true,
+      "control_directory_preserved": true,
+      "anonymous_downloads": [
+        {
+          "size": 155321551,
+          "sha256": "02883451393cf1517febe1ea7f1ed3c25e6e48ec1d783a9d0678d4f0a28a913d",
+          "url": "https://github.com/MXyyds666/embodied-studio-releases/releases/download/standalone-v0.46.39/EmbodiedStudioStandalone-Setup-0.46.39-cloud-20261029-standalone-r1-win-x64.exe",
+          "production_UpdateHttpClient": true
+        },
+        {
+          "size": 155339032,
+          "sha256": "9d6953790277e07e62afd550f491916ec26dbf296879337077be571242c95e7a",
+          "url": "https://github.com/MXyyds666/embodied-studio-releases/releases/download/standalone-v0.46.38/EmbodiedStudioStandalone-Setup-0.46.38-online-20261029-standalone-r1-win-x64.exe",
+          "production_UpdateHttpClient": true
+        }
+      ]
+    }
+  },
+  "own_frozen_client_cloud_catalog": {
+    "status": "passed",
+    "product": "EmbodiedStudioStandalone",
+    "sequence": 4,
+    "sha256": "547f39c6596dd4ba11262f28cd3f111041928f32f430d736cb0b98b390c6c931",
+    "trusted_key_id": "embodied-studio-cloud-catalog-20261029",
+    "expired_catalog_rejected": true,
+    "own_frozen_source_client": true,
+    "configuration_from_actual_bundle": true
+  },
+  "cloud_actions": {
+    "provider": "GitHub hosted windows-2022",
+    "local_machine_required": false,
+    "source_tests": 29,
+    "cloud_key_validation_run": "https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40815705422",
+    "deliberate_post_publish_interruption_run": "https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40815909211",
+    "deliberate_interruption_expected_failure": true,
+    "independent_recovery_run": "https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40816084009",
+    "recovery_signatures_generated": 0,
+    "reviewed_publication_run": "https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40819845807",
+    "scheduled_event_observed": false,
+    "scheduled_event_verification": "pending"
+  },
+  "signature": {
+    "project_p256": "verified",
+    "native_integrity": "verified",
+    "native_files": 2608,
+    "windows_authenticode": "NotSigned",
+    "authenticode_required": false
+  },
+  "migration_deadline": "2026-11-05T04:48:51Z",
+  "rollback_boundary": "Pre-migration clients restore old trust/feed; after legacy expiry or sequence mismatch, manually install a migration package. Never lower sequence or disable expiry.",
+  "limitations": {
+    "gui_initiated_handoff": false,
+    "request_origin": "backend fixture",
+    "actual_frozen_coordinator_and_host": true,
+    "clean_machine": "not_verified",
+    "device_access": false,
+    "firmware_changes": false,
+    "long_running_bench": "not_verified"
+  },
+  "prepared_at": "2026-10-29T05:05:41.410906+00:00"
+}
