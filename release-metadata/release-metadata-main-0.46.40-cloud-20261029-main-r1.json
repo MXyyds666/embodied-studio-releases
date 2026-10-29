@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "product": "EmbodiedStudio",
+  "app_id": "78DB81B8-4578-4A6F-B825-3E7404D9A2F6",
+  "version": "0.46.40",
+  "windows_version": "0.46.40.0",
+  "build_id": "cloud-20261029-main-r1",
+  "source_commit": "ddb9cd8e562e1943150737a86fa4d11bda6bd18a",
+  "source_fingerprint_sha256": "2bd9105b531399d9948f5ce34e5cb0e171e86f85ebe6d71d15ea710e951383ba",
+  "channel": "stable",
+  "formal_release": true,
+  "data_schema": 1,
+  "runtime_directory": "app-0.46.40-cloud-20261029-main-r1",
+  "installer": {
+    "url": "https://github.com/MXyyds666/embodied-studio-releases/releases/download/v0.46.40/EmbodiedStudio-Setup-0.46.40-cloud-20261029-main-r1-win-x64.exe",
+    "size": 155438778,
+    "sha256": "4539e1bcd0916de77a9116d977a836eff8f5c3b1305d8ffe6a2f89ed1ebe3ca4",
+    "publisher_certificate_sha256": null,
+    "launcher_sha256": "67b90eb6abc210d7aea83df223f0193fdf196c6eab5562869efbabf96eabe23e"
+  },
+  "native_files": 2608,
+  "project_p256_signature": "verified",
+  "native_integrity": "verified",
+  "windows_authenticode": "NotSigned",
+  "windows_authenticode_required": false,
+  "online_catalog_url": "https://raw.githubusercontent.com/MXyyds666/embodied-studio-releases/main/cloud/stable/catalog.json",
+  "online_signature_url": "https://raw.githubusercontent.com/MXyyds666/embodied-studio-releases/main/cloud/stable/catalog.sig",
+  "trust_key_ids": [
+    "embodied-studio-catalog-20261020",
+    "embodied-studio-cloud-catalog-20261029"
+  ],
+  "catalog_renewal_provider": "GitHub hosted Actions",
+  "local_signing_host_required_for_catalog_renewal": false,
+  "validation": {
+    "source_configuration": "passed",
+    "real_isolated_installation": "passed",
+    "actual_frozen_upgrade": "passed",
+    "user_rollback": "passed",
+    "failed_install_automatic_recovery": "passed",
+    "upgrade_after_recovery": "passed",
+    "user_data": "preserved",
+    "original_registration": "restored",
+    "cloud_signing_and_recovery": "passed",
+    "public_migration_https": "pending_after_publication",
+    "clean_machine": "not_verified",
+    "physical_device": "not_accessed"
+  },
+  "source_boundary": "Previous controlled online-update snapshot plus cloud catalog URL and dual public trust; parallel MAVLink Bootloader work excluded",
+  "prepared_at": "2026-10-29T04:45:02.143933+00:00"
+}
