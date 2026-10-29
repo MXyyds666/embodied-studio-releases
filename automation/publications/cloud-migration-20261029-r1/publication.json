@@ -1,0 +1,13 @@
+{
+  "repository": "MXyyds666/embodied-studio-releases",
+  "products": {
+    "main": {
+      "catalog_sha256": "ae2053aa713a4bea4f378491e7a173be42708a9ed70729b720709603794c1d22",
+      "expected_previous_catalog_sha256": "329860b078c8b08b14f227555d325f9fdf18519f435a34abae77f32f6c9510f2"
+    },
+    "standalone": {
+      "catalog_sha256": "547f39c6596dd4ba11262f28cd3f111041928f32f430d736cb0b98b390c6c931",
+      "expected_previous_catalog_sha256": "b4ef9dca6550f80d8c78d7d3a9cc152c71a39045c9415b2f09876156b52b2538"
+    }
+  }
+}
