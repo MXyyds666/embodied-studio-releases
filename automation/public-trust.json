@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "keys": [
+    {
+      "id": "embodied-studio-catalog-20261020",
+      "public_blob_hex": "45435331200000002c3815b5bc6db966aa05f3230fe0f3d9ca6b6d59474b3e294fa09ddf2f73ed7bac6a95fdadcd70d2f589b9d27cee9615d5b215164f60c2c92ceebc928d097ad5"
+    },
+    {
+      "id": "embodied-studio-cloud-catalog-20261029",
+      "public_blob_hex": "45435331200000004a4f63a438ec5bed3d773b15aa7df61f341067ab9c71916473390e1c4eca8b5351ced941d395a9c4563b5df08f32986395a6296b8c9effb4c7b5b418ec5c4ee3"
+    }
+  ]
+}

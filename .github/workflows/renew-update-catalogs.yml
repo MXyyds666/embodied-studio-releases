@@ -1,0 +1,95 @@
+name: Renew signed update catalogs
+
+on:
+  schedule:
+    - cron: '17 1,13 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Check/renew catalogs, validate the cloud key, or apply a reviewed signed publication
+        type: choice
+        options: [renew, validate, publish]
+        default: renew
+      force:
+        description: Force one reviewed acceptance renewal
+        type: boolean
+        default: false
+      publication:
+        description: Immutable signed input directory for publish mode
+        type: string
+        default: ''
+      fault:
+        description: Deliberate acceptance interruption; use none for normal operation
+        type: choice
+        options: [none, after_publish]
+        default: none
+
+permissions:
+  contents: read
+
+concurrency:
+  group: embodiedstudio-signed-catalog-renewal
+  cancel-in-progress: false
+
+jobs:
+  renew:
+    if: >-
+      github.repository == 'MXyyds666/embodied-studio-releases' &&
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'workflow_dispatch' || vars.ES_CLOUD_CATALOG_RENEWAL_ENABLED == 'true')
+    runs-on: windows-2022
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    env:
+      PYTHONUTF8: '1'
+      PYTHONIOENCODING: utf-8
+    steps:
+      - name: Check out the reviewed metadata and renewal sources
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.11'
+      - name: Test renewal scope, integrity and interruption recovery
+        shell: pwsh
+        run: python -B -m unittest discover -s automation/tests -v
+      - name: Validate and maintain both signed catalogs
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ES_CATALOG_SIGNING_KEY_PEM: ${{ secrets.ES_CATALOG_SIGNING_KEY_20261029 }}
+          ES_RENEWAL_MODE: ${{ inputs.mode || 'renew' }}
+          ES_RENEWAL_FORCE: ${{ inputs.force || 'false' }}
+          ES_RENEWAL_PUBLICATION: ${{ inputs.publication }}
+          ES_RENEWAL_FAULT: ${{ inputs.fault || 'none' }}
+        run: |
+          $arguments = @('-B', 'automation/renew.py', '--mode', $env:ES_RENEWAL_MODE,
+            '--state-directory', (Join-Path $env:RUNNER_TEMP 'catalog-renewal'))
+          if ($env:ES_RENEWAL_FORCE -eq 'true') { $arguments += '--force' }
+          if ($env:ES_RENEWAL_MODE -eq 'publish') { $arguments += @('--publication', $env:ES_RENEWAL_PUBLICATION) }
+          & python @arguments
+          if ($LASTEXITCODE -ne 0) { throw 'Catalog maintenance failed; keep the run receipt and inspect the failure.' }
+      - name: Record public result summary
+        if: always()
+        shell: pwsh
+        run: |
+          $result = Join-Path $env:RUNNER_TEMP 'catalog-renewal/result.json'
+          if (Test-Path -LiteralPath $result) {
+            '## Signed catalog maintenance' | Add-Content -LiteralPath $env:GITHUB_STEP_SUMMARY
+            '```json' | Add-Content -LiteralPath $env:GITHUB_STEP_SUMMARY
+            Get-Content -LiteralPath $result | Add-Content -LiteralPath $env:GITHUB_STEP_SUMMARY
+            '```' | Add-Content -LiteralPath $env:GITHUB_STEP_SUMMARY
+          }
+      - name: Retain compact success or failure evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: catalog-renewal-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/catalog-renewal/*.json
+            ${{ runner.temp }}/catalog-renewal/*.jsonl
+          if-no-files-found: ignore
+          retention-days: 14

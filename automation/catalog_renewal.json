@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "repository": "MXyyds666/embodied-studio-releases",
+  "branch": "main",
+  "account": "MXyyds666",
+  "valid_hours": 168,
+  "renew_before_hours": 96,
+  "github_cli": "gh",
+  "state_directory": "state",
+  "minimum_sequences": {
+    "main": 8,
+    "standalone": 2
+  },
+  "configurations": {
+    "main": {
+      "schema_version": 1,
+      "enabled": true,
+      "product": "EmbodiedStudio",
+      "app_id": "78DB81B8-4578-4A6F-B825-3E7404D9A2F6",
+      "executable": "EmbodiedStudio.exe",
+      "architecture": "x64",
+      "channel": "stable",
+      "catalog_url": "https://raw.githubusercontent.com/MXyyds666/embodied-studio-releases/main/cloud/stable/catalog.json",
+      "catalog_signature_url": "https://raw.githubusercontent.com/MXyyds666/embodied-studio-releases/main/cloud/stable/catalog.sig",
+      "automatic_check": true,
+      "check_interval_seconds": 86400,
+      "catalog_max_bytes": 524288,
+      "installer_max_bytes": 536870912,
+      "expected_publisher_sha256": null,
+      "authenticode_required": false,
+      "public_trust": {
+        "schema_version": 1,
+        "keys": [
+          {
+            "id": "embodied-studio-catalog-20261020",
+            "public_blob_hex": "45435331200000002c3815b5bc6db966aa05f3230fe0f3d9ca6b6d59474b3e294fa09ddf2f73ed7bac6a95fdadcd70d2f589b9d27cee9615d5b215164f60c2c92ceebc928d097ad5"
+          },
+          {
+            "id": "embodied-studio-cloud-catalog-20261029",
+            "public_blob_hex": "45435331200000004a4f63a438ec5bed3d773b15aa7df61f341067ab9c71916473390e1c4eca8b5351ced941d395a9c4563b5df08f32986395a6296b8c9effb4c7b5b418ec5c4ee3"
+          }
+        ]
+      }
+    },
+    "standalone": {
+      "schema_version": 1,
+      "enabled": true,
+      "product": "EmbodiedStudioStandalone",
+      "app_id": "668EE63C-F2FF-4D43-B792-4D269D10186B",
+      "executable": "EmbodiedStudioStandalone.exe",
+      "architecture": "x64",
+      "channel": "stable",
+      "catalog_url": "https://raw.githubusercontent.com/MXyyds666/embodied-studio-releases/main/standalone/cloud/stable/catalog.json",
+      "catalog_signature_url": "https://raw.githubusercontent.com/MXyyds666/embodied-studio-releases/main/standalone/cloud/stable/catalog.sig",
+      "automatic_check": true,
+      "check_interval_seconds": 86400,
+      "catalog_max_bytes": 524288,
+      "installer_max_bytes": 536870912,
+      "expected_publisher_sha256": null,
+      "public_trust": {
+        "schema_version": 1,
+        "keys": [
+          {
+            "id": "embodied-studio-catalog-20261020",
+            "public_blob_hex": "45435331200000002c3815b5bc6db966aa05f3230fe0f3d9ca6b6d59474b3e294fa09ddf2f73ed7bac6a95fdadcd70d2f589b9d27cee9615d5b215164f60c2c92ceebc928d097ad5"
+          },
+          {
+            "id": "embodied-studio-cloud-catalog-20261029",
+            "public_blob_hex": "45435331200000004a4f63a438ec5bed3d773b15aa7df61f341067ab9c71916473390e1c4eca8b5351ced941d395a9c4563b5df08f32986395a6296b8c9effb4c7b5b418ec5c4ee3"
+          }
+        ]
+      },
+      "authenticode_required": false
+    }
+  }
+}
