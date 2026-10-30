@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "product": "EmbodiedStudio",
+  "app_id": "78DB81B8-4578-4A6F-B825-3E7404D9A2F6",
+  "version": "0.46.42",
+  "windows_version": "0.46.42.0",
+  "build_id": "updatefix-20261030-r1",
+  "source_commit": "3a135cc41dd40ecaf5a9b012eb51a9ddb07d8dea",
+  "source_fingerprint_sha256": "cdc7574a28b0884adf520c3b82d1137372a6767705a8a79ab2ee5d3f90d9095a",
+  "channel": "stable",
+  "formal_release": true,
+  "data_schema": 1,
+  "runtime_directory": "app-0.46.42-updatefix-20261030-r1",
+  "installer": {
+    "url": "https://github.com/MXyyds666/embodied-studio-releases/releases/download/v0.46.42/EmbodiedStudio-Setup-0.46.42-updatefix-20261030-r1-win-x64.exe",
+    "size": 155433849,
+    "sha256": "5e7899528fa5936381745734870e86f15e113d87759f4efd15003965d6cc3a99",
+    "publisher_certificate_sha256": null,
+    "launcher_sha256": "e56298cfba0a849d0e1116ec500dd5822ae359e7e6839f599e52aa036820b3ea"
+  },
+  "native_files": 2608,
+  "project_p256_signature": "verified",
+  "native_integrity": "verified",
+  "windows_authenticode": "NotSigned",
+  "windows_authenticode_required": false,
+  "catalog_renewal_provider": "GitHub hosted Actions",
+  "validation": {
+    "isolated_full_suite_and_affected_reruns": "passed",
+    "old_candidate_direct_to_formal_installation": "passed",
+    "frozen_candidate_to_formal_upgrade": "passed",
+    "failed_install_automatic_recovery": "passed",
+    "public_https_upgrade": "pending_after_publication",
+    "clean_machine": "not_verified",
+    "physical_device": "not_accessed"
+  },
+  "prepared_at": "2026-10-30T05:16:22Z"
+}
