@@ -51,4 +51,11 @@
 
 工作流只允许同仓库main受信任触发，签名步骤最小contents:write权限；续签只修改四个云端目录路径并原子提交，不更改安装包或发布身份。新发布条目另外校验原离线密钥签名的审核输入；并发提交冲突停止，提交后响应不明时由新作业独立读回，不盲目重签。
 
-云端实测：[新密钥验证](https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40815705422)、[刻意提交后中断（预期失败）](https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40815909211)、[新作业独立恢复](https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40816084009)、[两版迁移目录原子发布](https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40819845807)。维护测试29项通过，恢复作业生成签名0；真实schedule事件仍单独等待观察，此处不将workflow_dispatch算作定时验证。
+云端实测：[新密钥验证](https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40815705422)、[刻意提交后中断（预期失败）](https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40815909211)、[新作业独立恢复](https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40816084009)、[两版迁移目录原子发布](https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40819845807)。维护测试29项通过，恢复作业生成签名0；真实schedule触发的两版自动续签及后续无变化检查现已通过，具体证据见下方补充验收。
+
+
+## 原生定时续签验收完成（2026-10-30）
+
+通过[真实schedule续签](https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40867556622)，两版均在正常96小时门槛内自动签署并原子发布168小时目录；随后[真实schedule无变化检查](https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40962412546)生成目录签名0，序号与签名保持一致。两次均用各产品冻结源码客户端和实际包内配置从公网独立验签，过期及降序号拒绝仍有效。没有强制续签或合成时间，本机任务继续PAUSED。临时15分钟观察调度已移除，仅保留UTC01:17/13:17。
+
+[完整原生定时验收收据](https://github.com/MXyyds666/embodied-studio-releases/blob/main/release-metadata/native-schedule-renewal-acceptance-20261029.json)。旧迁移目录与安装包未改动；旧迁移截止时间仍为北京时间2026-11-05 12:48:51，当前云端序号与有效期以签名目录为准。一次重新登记工作流是诊断操作，不能单凭之后出现事件断言平台根因。

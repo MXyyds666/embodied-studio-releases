@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "completed_at": "2026-10-30T01:13:07.750412+00:00",
+  "acceptance": "Actual schedule renewal at the normal 96-hour eligibility threshold, then a second actual schedule check without re-signing",
+  "actual_trigger": "schedule",
+  "forced_renewal": false,
+  "synthetic_clock": false,
+  "local_runner": false,
+  "seed_publication_run": "https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40822715052",
+  "native_renewal": {
+    "run_id": 40867556622,
+    "event": "schedule",
+    "url": "https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40867556622",
+    "created_at": "2026-10-29T11:43:17Z",
+    "head_sha": "6e716ba7db9496459664eef68c41d66f91beff5f",
+    "conclusion": "success",
+    "actual_GitHub_hosted_runner": true,
+    "result": {
+      "status": "renewed",
+      "checked_at": "2026-10-29T11:43:40.004011+00:00",
+      "repository": "MXyyds666/embodied-studio-releases",
+      "branch": "main",
+      "commit": "65517cc501fee92838d95efcbdd5b57ecb612318",
+      "products": {
+        "main": {
+          "sequence": 12,
+          "sha256": "fc424f3388b2b699a51b3d785441a61ddccf68f4a5cf6269320a9706bc7ea5eb",
+          "signature_sha256": "2efa9b8dd4ab7a897b93a3f5e1d956a4adc9480c2fa872a7c13517b434e61ef0",
+          "expires_at": "2026-11-05T11:43:40+00:00",
+          "trusted_key_id": "embodied-studio-cloud-catalog-20261029"
+        },
+        "standalone": {
+          "sequence": 6,
+          "sha256": "dcbe8439f8d49e7084d1e6835576ef3de6d90d696f4811a8fb2eb70dfa16a72a",
+          "signature_sha256": "85095b5589ca5b5c0fd581a9fe954e154bbdab833afa987cc353c57fb83d9059",
+          "expires_at": "2026-11-05T11:43:40+00:00",
+          "trusted_key_id": "embodied-studio-cloud-catalog-20261029"
+        }
+      },
+      "source_push": false,
+      "installer_changes": false,
+      "renewal_commit": "65517cc501fee92838d95efcbdd5b57ecb612318",
+      "cloud_hosted": true,
+      "operation": "renew",
+      "signatures_generated": 2
+    },
+    "normal_96_168_policy": true,
+    "force_used": false,
+    "synthetic_clock": false,
+    "products": {
+      "main": {
+        "status": "passed",
+        "product": "EmbodiedStudio",
+        "sequence": 12,
+        "sha256": "fc424f3388b2b699a51b3d785441a61ddccf68f4a5cf6269320a9706bc7ea5eb",
+        "signature_sha256": "2efa9b8dd4ab7a897b93a3f5e1d956a4adc9480c2fa872a7c13517b434e61ef0",
+        "trusted_key_id": "embodied-studio-cloud-catalog-20261029",
+        "actual_public_https": true,
+        "own_frozen_source_client": true,
+        "configuration_from_actual_bundle": true,
+        "validity_hours": 168,
+        "expired_catalog_rejected": true,
+        "regressed_catalog_rejected": true
+      },
+      "standalone": {
+        "status": "passed",
+        "product": "EmbodiedStudioStandalone",
+        "sequence": 6,
+        "sha256": "dcbe8439f8d49e7084d1e6835576ef3de6d90d696f4811a8fb2eb70dfa16a72a",
+        "signature_sha256": "85095b5589ca5b5c0fd581a9fe954e154bbdab833afa987cc353c57fb83d9059",
+        "trusted_key_id": "embodied-studio-cloud-catalog-20261029",
+        "actual_public_https": true,
+        "own_frozen_source_client": true,
+        "configuration_from_actual_bundle": true,
+        "validity_hours": 168,
+        "expired_catalog_rejected": true,
+        "regressed_catalog_rejected": true
+      }
+    },
+    "atomic_four_path_commit_verified": true
+  },
+  "subsequent_native_noop": {
+    "run_id": 40962412546,
+    "event": "schedule",
+    "url": "https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40962412546",
+    "created_at": "2026-10-29T22:00:17Z",
+    "head_sha": "65517cc501fee92838d95efcbdd5b57ecb612318",
+    "conclusion": "success",
+    "actual_GitHub_hosted_runner": true,
+    "result": {
+      "status": "unchanged",
+      "checked_at": "2026-10-29T22:00:41.606253+00:00",
+      "repository": "MXyyds666/embodied-studio-releases",
+      "branch": "main",
+      "commit": "65517cc501fee92838d95efcbdd5b57ecb612318",
+      "products": {
+        "main": {
+          "sequence": 12,
+          "sha256": "fc424f3388b2b699a51b3d785441a61ddccf68f4a5cf6269320a9706bc7ea5eb",
+          "signature_sha256": "2efa9b8dd4ab7a897b93a3f5e1d956a4adc9480c2fa872a7c13517b434e61ef0",
+          "expires_at": "2026-11-05T11:43:40+00:00",
+          "trusted_key_id": "embodied-studio-cloud-catalog-20261029"
+        },
+        "standalone": {
+          "sequence": 6,
+          "sha256": "dcbe8439f8d49e7084d1e6835576ef3de6d90d696f4811a8fb2eb70dfa16a72a",
+          "signature_sha256": "85095b5589ca5b5c0fd581a9fe954e154bbdab833afa987cc353c57fb83d9059",
+          "expires_at": "2026-11-05T11:43:40+00:00",
+          "trusted_key_id": "embodied-studio-cloud-catalog-20261029"
+        }
+      },
+      "source_push": false,
+      "installer_changes": false,
+      "cloud_hosted": true,
+      "operation": "renew",
+      "signatures_generated": 0
+    },
+    "normal_96_168_policy": true,
+    "force_used": false,
+    "synthetic_clock": false,
+    "products": {
+      "main": {
+        "status": "passed",
+        "product": "EmbodiedStudio",
+        "sequence": 12,
+        "sha256": "fc424f3388b2b699a51b3d785441a61ddccf68f4a5cf6269320a9706bc7ea5eb",
+        "signature_sha256": "2efa9b8dd4ab7a897b93a3f5e1d956a4adc9480c2fa872a7c13517b434e61ef0",
+        "trusted_key_id": "embodied-studio-cloud-catalog-20261029",
+        "actual_public_https": true,
+        "own_frozen_source_client": true,
+        "configuration_from_actual_bundle": true,
+        "validity_hours": 168,
+        "expired_catalog_rejected": true,
+        "regressed_catalog_rejected": true
+      },
+      "standalone": {
+        "status": "passed",
+        "product": "EmbodiedStudioStandalone",
+        "sequence": 6,
+        "sha256": "dcbe8439f8d49e7084d1e6835576ef3de6d90d696f4811a8fb2eb70dfa16a72a",
+        "signature_sha256": "85095b5589ca5b5c0fd581a9fe954e154bbdab833afa987cc353c57fb83d9059",
+        "trusted_key_id": "embodied-studio-cloud-catalog-20261029",
+        "actual_public_https": true,
+        "own_frozen_source_client": true,
+        "configuration_from_actual_bundle": true,
+        "validity_hours": 168,
+        "expired_catalog_rejected": true,
+        "regressed_catalog_rejected": true
+      }
+    }
+  },
+  "verified_native_run_count": 4,
+  "verified_native_runs": [
+    {
+      "run_id": 40867556622,
+      "event": "schedule",
+      "url": "https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40867556622",
+      "status": "renewed",
+      "signatures_generated": 2
+    },
+    {
+      "run_id": 40923050726,
+      "event": "schedule",
+      "url": "https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40923050726",
+      "status": "unchanged",
+      "signatures_generated": 0
+    },
+    {
+      "run_id": 40935955300,
+      "event": "schedule",
+      "url": "https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40935955300",
+      "status": "unchanged",
+      "signatures_generated": 0
+    },
+    {
+      "run_id": 40962412546,
+      "event": "schedule",
+      "url": "https://github.com/MXyyds666/embodied-studio-releases/actions/runs/40962412546",
+      "status": "unchanged",
+      "signatures_generated": 0
+    }
+  ],
+  "permanent_schedule_utc": "17 1,13 * * *",
+  "permanent_schedule_Asia_Shanghai": "09:17 and 21:17 daily",
+  "renew_before_hours": 96,
+  "renewed_validity_hours": 168,
+  "local_Codex_renewal": "PAUSED",
+  "installers_and_legacy_migration_feeds": "unchanged",
+  "windows_authenticode": "NotSigned",
+  "private_key": "Existing repository Actions Secret; never read back or exported",
+  "note": "The native acceptance runs used a temporary 15-minute schedule on the same workflow; the temporary trigger is removed after verification."
+}

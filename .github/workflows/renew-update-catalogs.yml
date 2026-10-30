@@ -3,7 +3,6 @@ name: Renew signed update catalogs
 'on':
   schedule:
     - cron: '17 1,13 * * *'
-    - cron: '8,23,38,53 * * * *' # Temporary native schedule acceptance; remove after renewal and no-op verification
   workflow_dispatch:
     inputs:
       mode:
