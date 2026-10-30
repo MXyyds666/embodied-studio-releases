@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "product": "EmbodiedStudioStandalone",
+  "app_id": "668EE63C-F2FF-4D43-B792-4D269D10186B",
+  "version": "0.46.42",
+  "windows_version": "0.46.42.0",
+  "build_id": "allbuilds-20261030-standalone-formal-r1",
+  "source_commit": "5319fb267fa7bfdc8d140ce157b42ac300eb135e",
+  "source_fingerprint_sha256": "ebc2343325cdd644fb574b0e775789c46611a763eb87fe92133a1dce33009232",
+  "built_at": "2026-10-30T07:57:39.498226Z",
+  "channel": "stable",
+  "formal_release": true,
+  "data_schema": 1,
+  "runtime_directory": "app-0.46.42-allbuilds-20261030-standalone-formal-r1",
+  "installer": {
+    "url": "https://github.com/MXyyds666/embodied-studio-releases/releases/download/standalone-v0.46.42/EmbodiedStudioStandalone-Setup-0.46.42-allbuilds-20261030-standalone-formal-r1-win-x64.exe",
+    "size": 155355596,
+    "sha256": "f68e132040d48e0979525c47b40742a409a34331cc27003633074055bcff2aa3",
+    "publisher_certificate_sha256": null,
+    "launcher_sha256": "2a230451e161fd9872b4862d787e59091495520eee3a395b56587fb51fb523d3"
+  },
+  "native_files": 2608,
+  "project_p256_signature": "verified",
+  "native_integrity": "verified",
+  "windows_authenticode": "NotSigned",
+  "windows_authenticode_required": false,
+  "catalog_renewal_provider": "GitHub hosted Actions",
+  "validation": {
+    "isolated_full_suite": "passed",
+    "old_installer_to_candidate": "passed",
+    "old_installer_to_formal": "passed",
+    "frozen_candidate_to_formal_upgrade": "passed",
+    "failed_install_automatic_recovery": "passed",
+    "public_https_upgrade": "pending_after_publication",
+    "clean_machine": "not_verified",
+    "physical_device": "not_accessed"
+  },
+  "prepared_at": "2026-10-30T09:11:51Z"
+}
