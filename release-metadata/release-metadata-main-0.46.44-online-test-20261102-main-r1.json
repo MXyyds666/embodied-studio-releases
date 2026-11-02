@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "product": "EmbodiedStudio",
+  "version": "0.46.44",
+  "windows_version": "0.46.44.0",
+  "build_id": "online-test-20261102-main-r1",
+  "source_commit": "572128f88656c98836ffdff2e03553dd17303fe3",
+  "source_fingerprint_sha256": "506608426fc31a63102c627dcda332702b7aa3f9b4b3f5463b0b7c82ba914c3f",
+  "built_at": "2026-11-02T01:50:22.936865Z",
+  "channel": "stable",
+  "formal_release": true,
+  "purpose": "temporary online update test",
+  "runtime_directory": "app-0.46.44-online-test-20261102-main-r1",
+  "installer": {
+    "url": "https://github.com/MXyyds666/embodied-studio-releases/releases/download/v0.46.44/EmbodiedStudio-Setup-0.46.44-online-test-20261102-main-r1-win-x64.exe",
+    "size": 155441402,
+    "sha256": "7aabb5a73394c4b6f45b5f359d204c5b27d55fd912dbd680c46be84c1084b872",
+    "publisher_certificate_sha256": null,
+    "launcher_sha256": "5403aded7c03cfa1f79338605966dacbb3c2039800dccb4e9b5564d0302c04f0"
+  },
+  "native_files": 2608,
+  "project_p256_signature": "verified",
+  "windows_authenticode": "NotSigned",
+  "windows_authenticode_required": false,
+  "validation": {
+    "focused_tests": "passed",
+    "full_suite_rerun": "passed",
+    "initial_suite": "one firmware fixture test failed; module retest passed; evidence retained",
+    "exact_source_archive": "passed",
+    "frozen_smoke": "passed",
+    "local_actual_install_upgrade_recovery": "not tested for this build",
+    "public_https": "pending",
+    "manual_user_upgrade": "pending",
+    "physical_device": "not accessed"
+  }
+}
