@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "product": "EmbodiedStudio",
+  "app_id": "78DB81B8-4578-4A6F-B825-3E7404D9A2F6",
+  "version": "0.46.46",
+  "windows_version": "0.46.46.0",
+  "build_id": "mirror-20261103-main-r3",
+  "source_commit": "c27f14f59b2656cbc011f2c54cca5ab55578dd89",
+  "source_fingerprint_sha256": "61b76d3995b502267fdb88bcdf30a532ab8d5a39d3c29355c0595ba1f43cc3c7",
+  "built_at": "2026-11-03T11:09:35.880482Z",
+  "data_schema": 1,
+  "channel": "stable",
+  "formal_release": true,
+  "runtime_directory": "app-0.46.46-mirror-20261103-main-r3",
+  "installer": {
+    "url": "https://github.com/MXyyds666/embodied-studio-releases/releases/download/v0.46.46/EmbodiedStudio-Setup-0.46.46-mirror-20261103-main-r3-win-x64.exe",
+    "size": 155714429,
+    "sha256": "1e2944315f2a577b0b60ba803823c67875abe8773678968026868dad7998037a",
+    "publisher_certificate_sha256": null,
+    "launcher_sha256": "837ccede54d7d09706107c7edef7c72e879b0bb4fadeb89d511b5368fe88164b"
+  },
+  "native_files": 2608,
+  "project_p256_signature": "verified",
+  "windows_authenticode": "NotSigned",
+  "windows_authenticode_required": false,
+  "catalog_renewal_provider": "GitHub hosted Actions",
+  "validation": {
+    "isolated_full_suite_before_last_route_added": "passed_after_native_module_rerun",
+    "targeted_regression_after_last_route_added": "passed",
+    "frozen_smoke": "passed",
+    "source_mirror_https_check": "passed_direct_blocked_in_test",
+    "source_mirror_without_system_proxy": "passed_vpn_status_unknown",
+    "frozen_auto_check_without_system_proxy": "passed_direct_github_not_blocked",
+    "frozen_auto_check_mirror_only": "passed_direct_github_blocked",
+    "actual_installer_or_upgrade": "not_run",
+    "clean_machine": "not_verified",
+    "physical_device": "not_accessed"
+  }
+}

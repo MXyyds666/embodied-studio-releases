@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "product": "EmbodiedStudioStandalone",
+  "app_id": "668EE63C-F2FF-4D43-B792-4D269D10186B",
+  "version": "0.46.46",
+  "windows_version": "0.46.46.0",
+  "build_id": "mirror-20261103-standalone-r2",
+  "source_commit": "cce542060b4be01cf4b4b4e78713427445f30a06",
+  "source_fingerprint_sha256": "4bdbaab4003be6ab31d02708383b7401bf8973e940536be5e15a11f1491c5ce7",
+  "built_at": "2026-11-03T09:05:52.916048Z",
+  "data_schema": 1,
+  "channel": "stable",
+  "formal_release": true,
+  "runtime_directory": "app-0.46.46-mirror-20261103-standalone-r2",
+  "installer": {
+    "url": "https://github.com/MXyyds666/embodied-studio-releases/releases/download/standalone-v0.46.46/EmbodiedStudioStandalone-Setup-0.46.46-mirror-20261103-standalone-r2-win-x64.exe",
+    "size": 155681456,
+    "sha256": "1e5f141e16a914669b6c4e18d712bcb94fb112ac8281cf085f2d54349087f618",
+    "publisher_certificate_sha256": null,
+    "launcher_sha256": "4821f3412f7fd8f6703cce3063a354defb63decb4f14a016c624102e2a290729"
+  },
+  "native_files": 2608,
+  "project_p256_signature": "verified",
+  "windows_authenticode": "NotSigned",
+  "windows_authenticode_required": false,
+  "catalog_renewal_provider": "GitHub hosted Actions",
+  "validation": {
+    "isolated_full_suite_before_last_route_added": "passed_with_skips_recorded",
+    "targeted_regression_after_last_route_added": "passed",
+    "frozen_smoke": "passed",
+    "source_mirror_https_check": "passed_direct_blocked_in_test",
+    "source_mirror_without_system_proxy": "passed_vpn_status_unknown",
+    "frozen_auto_check_without_system_proxy": "passed_direct_github_not_blocked",
+    "frozen_auto_check_mirror_only": "passed_direct_github_blocked",
+    "actual_installer_or_upgrade": "not_run",
+    "clean_machine": "not_verified",
+    "physical_device": "not_accessed"
+  }
+}
