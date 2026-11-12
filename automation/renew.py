@@ -1,7 +1,7 @@
 """Renew both signed public catalogs without changing any release identity.
 
 Run on the Windows signing host. Private keys stay in CurrentUser/My; only
-four allowlisted catalog blobs may be published. A durable pending transaction
+only the selected profile's allowlisted catalog blobs may be published. A durable pending transaction
 allows readback before retrying an interrupted GitHub ref update.
 """
 
@@ -37,6 +37,25 @@ PRODUCTS = {
 }
 ALLOWED_PATHS = frozenset(prefix + suffix for _, _, prefix in PRODUCTS.values()
                           for suffix in ("catalog.json", "catalog.sig"))
+
+_LEGACY_PRODUCTS = dict(PRODUCTS)
+_DEVICE_PRODUCTS = {
+    "device": ("EmbodiedStudioDevice", "6AF5A21A-178A-4A58-BEBC-6384A7D3945D", "stable/"),
+}
+
+
+def select_profile(profile):
+    """Select one reviewed scope once at CLI startup, before creating a job."""
+    global BRANCH, PRODUCTS, ALLOWED_PATHS
+    if profile == "legacy":
+        BRANCH, PRODUCTS = "main", dict(_LEGACY_PRODUCTS)
+    elif profile == "device":
+        BRANCH, PRODUCTS = "device-catalog", dict(_DEVICE_PRODUCTS)
+    else:
+        raise ValueError("unknown catalog profile")
+    ALLOWED_PATHS = frozenset(prefix + suffix for _, _, prefix in PRODUCTS.values()
+                              for suffix in ("catalog.json", "catalog.sig"))
+
 
 
 def digest(raw: bytes) -> str:
@@ -78,7 +97,7 @@ def configurations(policy: dict) -> dict[str, UpdateConfiguration]:
             or policy["branch"] != BRANCH or policy["account"] != ACCOUNT
             or policy["valid_hours"] != 168 or policy["renew_before_hours"] != 96
             or set(policy["configurations"]) != set(PRODUCTS)):
-        raise ValueError("renewal policy exceeds the approved two-product scope")
+        raise ValueError("renewal policy exceeds the approved product scope")
     result = {}
     for label, (product, app_id, prefix) in PRODUCTS.items():
         config = UpdateConfiguration.from_bytes(json.dumps(policy["configurations"][label]).encode())
@@ -190,7 +209,7 @@ class GitHub:
 
     def create_commit(self, parent, base_tree, files):
         if set(files) != ALLOWED_PATHS:
-            raise ValueError("only the four catalog paths may be committed")
+            raise ValueError("only the four catalog paths may be committed" if BRANCH == "main" else "only the device catalog paths may be committed")
         elements = []
         for path, raw in files.items():
             blob = self.api(self.endpoint("git/blobs"), "POST",
@@ -199,14 +218,15 @@ class GitHub:
                 raise ValueError("created blob digest mismatch")
             elements.append(dict(path=path, mode="100644", type="blob", sha=blob["sha"]))
         tree = self.api(self.endpoint("git/trees"), "POST", {"base_tree": base_tree, "tree": elements})
+        message = ("chore(updates): renew signed main and standalone catalogs"
+                   if BRANCH == "main" else "chore(updates): renew signed device catalog")
         commit = self.api(self.endpoint("git/commits"), "POST", {
-            "message": "chore(updates): renew signed main and standalone catalogs",
-            "tree": tree["sha"], "parents": [parent]})["sha"]
+            "message": message, "tree": tree["sha"], "parents": [parent]})["sha"]
         changes = self.api(self.endpoint(f"compare/{parent}...{commit}"))
         if (len(changes["commits"]) != 1 or
                 {row["filename"] for row in changes["files"]} != ALLOWED_PATHS or
                 any(row["status"] != "modified" for row in changes["files"])):
-            raise ValueError("renewal commit changed files outside the four catalog paths")
+            raise ValueError("renewal commit changed files outside the approved catalog paths")
         return commit
 
     def advance(self, parent, commit):
@@ -336,7 +356,10 @@ class Renewal:
                 return self.run(force=True)
         if pending is None:
             # Detect loss/expiry of the signing credential before renewal is due.
-            self.signer.preflight(snapshot["files"]["cloud/stable/catalog.json"], self.policy["configurations"]["main"]["public_trust"])
+            first = next(iter(PRODUCTS))
+            prefix = PRODUCTS[first][2]
+            self.signer.preflight(snapshot["files"][prefix + "catalog.json"],
+                                  self.policy["configurations"][first]["public_trust"])
             due = force or any(c.expires_at - self.now <= timedelta(hours=96) for c in catalogs.values())
             if due:
                 pending = {"parent": snapshot["head"], "base_tree": snapshot["tree"],
@@ -477,12 +500,15 @@ def prepare_publication(job, publication):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, allow_abbrev=False)
+    parser.add_argument("--profile", choices=("legacy", "device"), default="legacy")
     parser.add_argument("--mode", choices=("renew", "validate", "publish"), default="renew")
     parser.add_argument("--publication", default="")
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--state-directory", type=Path, required=True)
     arguments = parser.parse_args()
-    policy = strict_json((ROOT / "automation/catalog_renewal.json").read_bytes())
+    select_profile(arguments.profile)
+    policy_name = "catalog_renewal.json" if arguments.profile == "legacy" else "device_catalog_renewal.json"
+    policy = strict_json((ROOT / "automation" / policy_name).read_bytes())
     configurations(policy)
     directory = arguments.state_directory.resolve()
     directory.mkdir(parents=True, exist_ok=True)
@@ -496,8 +522,9 @@ def main():
                 snapshot = job.remote.snapshot()
                 job.inspect(snapshot["files"])
                 challenge = b"EmbodiedStudio hosted catalog signing acceptance"
-                proof = signer.sign(challenge, policy["configurations"]["main"]["public_trust"])
-                key = verify_catalog_signature(challenge, proof, job.configs["main"].public_trust)
+                first = next(iter(PRODUCTS))
+                proof = signer.sign(challenge, policy["configurations"][first]["public_trust"])
+                key = verify_catalog_signature(challenge, proof, job.configs[first].public_trust)
                 if key != "embodied-studio-cloud-catalog-20261029":
                     raise ValueError("cloud signing key did not match the migration public key")
                 result = dict(status="validated", public=job.verify_public(snapshot["files"]), key_id=key,

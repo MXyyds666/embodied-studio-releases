@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "repository": "MXyyds666/embodied-studio-releases",
+  "account": "MXyyds666",
+  "valid_hours": 168,
+  "renew_before_hours": 96,
+  "github_cli": "gh",
+  "state_directory": "state",
+  "branch": "device-catalog",
+  "minimum_sequences": {
+    "device": 1
+  },
+  "configurations": {
+    "device": {
+      "schema_version": 1,
+      "enabled": true,
+      "product": "EmbodiedStudioDevice",
+      "app_id": "6AF5A21A-178A-4A58-BEBC-6384A7D3945D",
+      "executable": "EmbodiedStudioDevice.exe",
+      "architecture": "x64",
+      "channel": "stable",
+      "catalog_url": "https://raw.githubusercontent.com/MXyyds666/embodied-studio-releases/device-catalog/stable/catalog.json",
+      "catalog_signature_url": "https://raw.githubusercontent.com/MXyyds666/embodied-studio-releases/device-catalog/stable/catalog.sig",
+      "automatic_check": true,
+      "check_interval_seconds": 86400,
+      "catalog_max_bytes": 524288,
+      "installer_max_bytes": 536870912,
+      "expected_publisher_sha256": null,
+      "authenticode_required": false,
+      "public_trust": {
+        "schema_version": 1,
+        "keys": [
+          {
+            "id": "embodied-studio-catalog-20261020",
+            "public_blob_hex": "45435331200000002c3815b5bc6db966aa05f3230fe0f3d9ca6b6d59474b3e294fa09ddf2f73ed7bac6a95fdadcd70d2f589b9d27cee9615d5b215164f60c2c92ceebc928d097ad5"
+          },
+          {
+            "id": "embodied-studio-cloud-catalog-20261029",
+            "public_blob_hex": "45435331200000004a4f63a438ec5bed3d773b15aa7df61f341067ab9c71916473390e1c4eca8b5351ced941d395a9c4563b5df08f32986395a6296b8c9effb4c7b5b418ec5c4ee3"
+          }
+        ]
+      }
+    }
+  }
+}
