@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "product": "EmbodiedStudioStandalone",
+  "app_id": "668EE63C-F2FF-4D43-B792-4D269D10186B",
+  "version": "0.48.9",
+  "windows_version": "0.48.9.0",
+  "build_id": "release-mavlink-0489-20261116-r1",
+  "source_commit": "6f121cad289e9d0376ab4232d54395564b3e52d0",
+  "source_fingerprint_sha256": "0971a040e658e6b6071ebda11b06bf34e7c8b299a6fe4fb107204bedbb09bf0f",
+  "built_at": "2026-11-16T06:30:59.532767Z",
+  "data_schema": 1,
+  "channel": "stable",
+  "formal_release": true,
+  "runtime_directory": "app-0.48.9-release-mavlink-0489-20261116-r1",
+  "installer": {
+    "url": "https://github.com/MXyyds666/embodied-studio-releases/releases/download/standalone-v0.48.9/EmbodiedStudioStandalone-Setup-0.48.9-release-mavlink-0489-20261116-r1-win-x64.exe",
+    "size": 156801986,
+    "sha256": "75f77cc6b0e18c77fa8d09a32eca4de1033ec984c065146b98d677ed334e538a",
+    "publisher_certificate_sha256": null,
+    "launcher_sha256": "fcab9bca1fd0a7b91f0c0e7a180880783b72cd7ea1e218e7496fb8fd2196fb74"
+  },
+  "native_files": 2613,
+  "project_p256_signature": "verified",
+  "windows_authenticode": "NotSigned",
+  "windows_authenticode_required": false,
+  "catalog_renewal_provider": "GitHub hosted Actions",
+  "validation": {
+    "frozen_source_product_regression": "passed",
+    "frozen_source_firmware_upgrade_target_regression": "passed_offline",
+    "frozen_source_update_coordinator_and_catalog_regression": "passed_offline",
+    "formal_package_offscreen_smoke": "passed",
+    "formal_package_installation_upgrade_and_rollback": "not_run",
+    "physical_device_and_field_validation": "not_run"
+  },
+  "validated_rollback": "0.48.8+release-mavlink-0488-20261116-r1@43efdf4dc9e7ac6277407824c0bef7c2fdc1a47594f822954d368203e490387d"
+}
