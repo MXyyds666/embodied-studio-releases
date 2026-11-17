@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "product": "EmbodiedStudioDevice",
+  "app_id": "6AF5A21A-178A-4A58-BEBC-6384A7D3945D",
+  "version": "0.50.19",
+  "windows_version": "0.50.19.0",
+  "build_id": "release-cia402-05019-20261117-r1",
+  "source_commit": "789050a0e0908d6f71a465a57e8f6259fbac9651",
+  "source_fingerprint_sha256": "9e59850f2d337a4feb55ab777a2192bab35228785f3d7d36f6acb1b27d55ce0b",
+  "built_at": "2026-11-17T01:53:42.712338Z",
+  "data_schema": 1,
+  "channel": "stable",
+  "formal_release": true,
+  "runtime_directory": "app-0.50.19-release-cia402-05019-20261117-r1",
+  "installer": {
+    "url": "https://github.com/MXyyds666/embodied-studio-releases/releases/download/device-v0.50.19/EmbodiedStudioDevice-Setup-0.50.19-release-cia402-05019-20261117-r1-win-x64.exe",
+    "size": 158387536,
+    "sha256": "e62824a524287af496cda30c7418c120f296ee8ab65b69ade3e437044fd59e80",
+    "publisher_certificate_sha256": null,
+    "launcher_sha256": "9d9d18f8695bda728312ade66fb02ba34e4526fbba9a9ff9afd43f0e5b42b5d8"
+  },
+  "native_files": 2616,
+  "project_p256_signature": "verified",
+  "windows_authenticode": "NotSigned",
+  "windows_authenticode_required": false,
+  "catalog_renewal_provider": "GitHub hosted Actions",
+  "validation": {
+    "frozen_source_product_regression": "passed",
+    "parameter_submit_key_focus_and_manual_regression": "passed_offline",
+    "frozen_source_update_coordinator_and_catalog_regression": "passed_offline",
+    "formal_package_offscreen_smoke": "passed",
+    "formal_package_installation_upgrade_and_rollback": "not_run",
+    "physical_device_and_field_validation": "not_run"
+  },
+  "validated_rollback": "0.50.18+release-cia402-05018-20261116-r1@1a50b0a7aef395939c157c75ce85115903ac407872030048b43e754d85914f11"
+}
